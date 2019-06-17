@@ -18,7 +18,7 @@ public class ExtractMethod {
     }
 
     //print details
-    System.out.println("name:" + _name);
-    System.out.println("amount" + outstanding);
+    System.out.println("name: " + _name);
+    System.out.println("amount: " + outstanding);
   }
 }
