@@ -11,7 +11,7 @@ public class ExtractMethod {
     _name = n;
   }
 
-  void printOwing(String name ,double amount) {
+  void printOwing() {
     Enumeration e = _orders.elements();
     double outstanding = 0.0;
 
