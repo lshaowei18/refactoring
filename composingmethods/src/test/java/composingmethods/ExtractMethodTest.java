@@ -11,6 +11,7 @@ import java.io.PrintStream;
 public class ExtractMethodTest {
   private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
   private final PrintStream originalOut = System.out;
+  private String expected;
 
   @Before
   public void setUpStreams() {
@@ -20,6 +21,8 @@ public class ExtractMethodTest {
   @After
   public void restoreStreams() {
     System.setOut(originalOut);
+    System.out.println(expected);
+    System.out.println(outContent.toString());
   }
 
   @Test
@@ -27,11 +30,11 @@ public class ExtractMethodTest {
     ExtractMethod em = new ExtractMethod("Shao Wei");
     em.printOwing();
 
-    String expected = "**************************%n";
-    expected += "***** Customer Owes ******%n";
-    expected += "**************************%n";
-    expected += "name: " + "Shao Wei";
-    expected += "amount: " + String.valueOf(0);
+    expected = "**************************\n";
+    expected += "***** Customer Owes ******\n";
+    expected += "**************************\n";
+    expected += "name: " + "Shao Wei\n";
+    expected += "amount: " + String.valueOf(0.0) + "\n";
 
     assertEquals("expected", outContent.toString());
   }
