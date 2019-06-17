@@ -1,7 +1,12 @@
 package composingmethods;
 
 import org.junit.Test;
+import org.junit.Before;
+import org.junit.After;
 import static org.junit.Assert.*;
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
+
 
 public class ExtractMethodTest {
   private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
@@ -19,7 +24,7 @@ public class ExtractMethodTest {
 
   @Test
   public void out() {
-    ExtractMethod em = new ExtractMethod();
+    ExtractMethod em = new ExtractMethod("Shao Wei");
     em.printOwing();
 
     String expected = "**************************%n";
