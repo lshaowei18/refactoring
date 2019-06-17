@@ -26,7 +26,7 @@ public class ExtractMethodTest {
   }
 
   @Test
-  public void out() {
+  public void PrintOwingWhenNoOrders() {
     ExtractMethod em = new ExtractMethod("Shao Wei");
     em.printOwing();
 
@@ -36,6 +36,6 @@ public class ExtractMethodTest {
     expected += "name: " + "Shao Wei\n";
     expected += "amount: " + String.valueOf(0.0) + "\n";
 
-    assertEquals("expected", outContent.toString());
+    assertEquals(expected, outContent.toString());
   }
 }

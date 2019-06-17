@@ -16,9 +16,9 @@ public class ExtractMethod {
     double outstanding = 0.0;
 
     //print banner
-    System.out.println ("**************************");
-    System.out.println ("***** Customer Owes ******");
-    System.out.println ("**************************");
+    System.out.print("**************************\n");
+    System.out.print("***** Customer Owes ******\n");
+    System.out.print("**************************\n");
 
     //calculate outstanding
     while(e.hasMoreElements()) {
@@ -27,8 +27,8 @@ public class ExtractMethod {
     }
 
     //print details
-    System.out.println("name: " + _name);
-    System.out.println("amount: " + outstanding);
+    System.out.print("name: " + _name + "\n");
+    System.out.print("amount: " + String.valueOf(outstanding) +"\n");
   }
 }
 
