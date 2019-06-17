@@ -12,17 +12,9 @@ public class ExtractMethod {
   }
 
   void printOwing() {
-    Enumeration e = _orders.elements();
-    double outstanding = 0.0;
 
     printBanner();
-
-    //calculate outstanding
-    while(e.hasMoreElements()) {
-      Order each = (Order) e.nextElement();
-      outstanding += each.getAmount();
-    }
-
+    double outstanding = getOutstanding();
     printDetails(outstanding);
   }
 
@@ -36,6 +28,18 @@ public class ExtractMethod {
   void printDetails(double outstanding) {
     System.out.print("name: " + _name + "\n");
     System.out.print("amount: " + String.valueOf(outstanding) +"\n");
+  }
+
+  double getOutstanding() {
+    Enumeration e = _orders.elements();
+    double outstanding = 0.0;
+
+    //calculate outstanding
+    while(e.hasMoreElements()) {
+      Order each = (Order) e.nextElement();
+      outstanding += each.getAmount();
+    }
+    return outstanding;
   }
 }
 
