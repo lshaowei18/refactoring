@@ -15,7 +15,7 @@ public class ExtractMethod {
     Enumeration e = _orders.elements();
     double outstanding = 0.0;
 
-    printBanner();    
+    printBanner();
 
     //calculate outstanding
     while(e.hasMoreElements()) {
@@ -23,9 +23,7 @@ public class ExtractMethod {
       outstanding += each.getAmount();
     }
 
-    //print details
-    System.out.print("name: " + _name + "\n");
-    System.out.print("amount: " + String.valueOf(outstanding) +"\n");
+    printDetails(outstanding);
   }
 
   void printBanner() {
@@ -33,6 +31,11 @@ public class ExtractMethod {
     System.out.print("**************************\n");
     System.out.print("***** Customer Owes ******\n");
     System.out.print("**************************\n");
+  }
+
+  void printDetails(double outstanding) {
+    System.out.print("name: " + _name + "\n");
+    System.out.print("amount: " + String.valueOf(outstanding) +"\n");
   }
 }
 
