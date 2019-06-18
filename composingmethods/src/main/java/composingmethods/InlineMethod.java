@@ -4,6 +4,11 @@ public class InlineMethod {
   private int _quantity;
   private int _itemPrice;
 
+  public InlineMethod(int quantity, int itemPrice) {
+    _quantity = quantity;
+    _itemPrice = itemPrice;
+  }
+
   double getPrice() {
     int basePrice = _quantity * _itemPrice;
     double discountFactor;
